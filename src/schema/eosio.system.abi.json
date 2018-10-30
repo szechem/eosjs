@@ -67,9 +67,12 @@
       "base": "",
       "fields": [
         {"name":"creator", "type":"account_name"},
-        {"name":"name",    "type":"account_name"},
-        {"name":"owner",   "type":"authority"},
-        {"name":"active",  "type":"authority"}
+        {"name":"new_account",    "type":"account_name"},
+        {"name":"owner_key",   "type":"string"},
+        {"name":"active_key",  "type":"string"},
+        {"name":"ram_bytes",    "type":"uint64"},
+        {"name":"net_weight",   "type":"uint64"},
+        {"name":"cpu_weight",  "type":"uint64"}
       ]
     },{
       "name": "setcode",
@@ -111,6 +114,14 @@
         {"name":"code",        "type":"account_name"},
         {"name":"type",        "type":"action_name"},
         {"name":"requirement", "type":"permission_name"}
+      ]
+    },{
+      "name": "lock",
+      "base": "",
+      "fields": [
+        {"name":"from",        "type":"account_name"},
+        {"name":"to",          "type":"account_name"},
+        {"name":"quantity",    "type":"asset"}
       ]
     },{
       "name": "unlinkauth",
@@ -429,6 +440,10 @@
    },{
      "name": "linkauth",
      "type": "linkauth",
+     "ricardian_contract": ""
+   },{
+     "name": "lock",
+     "type": "lock",
      "ricardian_contract": ""
    },{
      "name": "unlinkauth",
