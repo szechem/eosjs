@@ -9,6 +9,7 @@ const writeApiGen = require('./write-api')
 const format = require('./format')
 const schema = require('./schema')
 
+const interchain = require('./schema/eosio.interchain.abi.json')
 const token = require('./schema/eosio.token.abi.json')
 const system = require('./schema/eosio.system.abi.json')
 const eosio_null = require('./schema/eosio.null.abi.json')
@@ -76,6 +77,7 @@ function createEos(config) {
 
   const abis = []
   const abiCache = AbiCache(network, config)
+  abis.push(abiCache.abi('eosio.interchain', interchain))
   abis.push(abiCache.abi('eosio.null', eosio_null))
   abis.push(abiCache.abi('eosio.token', token))
   abis.push(abiCache.abi('eosio', system))
