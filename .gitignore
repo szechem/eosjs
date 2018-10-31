@@ -8,7 +8,7 @@ lib
 docker/.env
 docker/contracts
 dist/*.js
-bin/eosio.interchain.abi
+bin/eosio.gateway.abi
 bin/eosio.system.abi
 bin/eosio.token.abi
 docs/index.md
