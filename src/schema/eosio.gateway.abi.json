@@ -6,9 +6,6 @@
       "name": "issue",
       "base": "",
       "fields": [{
-          "name": "from",
-          "type": "name"
-        },{
           "name": "to",
           "type": "name"
         },{
@@ -20,36 +17,18 @@
       "name": "withdraw",
       "base": "",
       "fields": [{
-          "name": "owner",
+          "name": "from",
           "type": "name"
+        },{
+          "name": "bts_to",
+          "type": "string"
         },{
           "name": "quantity",
           "type": "asset"
-        }
-      ]
-    },{
-      "name": "withdrawall",
-      "base": "",
-      "fields": [{
-          "name": "removed",
-          "type": "name"
         },{
-          "name": "symbol",
-          "type": "asset"
+          "name": "original_memo",
+          "type": "string"
         }
-      ]
-    },{
-      "name": "init_data",
-      "base": "",
-      "fields": [
-        {"name":"balance", "type":"asset"},
-        {"name":"owner", "type":"name"}
-      ]
-    },{
-      "name": "init_global_state",
-      "base": "",
-      "fields": [
-        {"name":"sum", "type":"uint64"}
       ]
     }
   ],
@@ -60,10 +39,6 @@
     },{
       "name": "withdraw",
       "type": "withdraw",
-      "ricardian_contract": ""
-    },{
-      "name": "withdrawall",
-      "type": "withdrawall",
       "ricardian_contract": ""
     }
   ],
