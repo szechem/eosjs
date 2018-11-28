@@ -1,11 +1,10 @@
-sudo: required
-
-services:
-  - docker
-
+sudo: false
 language: node_js
 node_js:
-  - "10"
-
+  - '10.0.0'
+before_install:
+  - npm install -g typescript
 script:
-  - cd docker && ./run_tests.sh
+  - npm run lint
+  - npm run test
+
